@@ -20,13 +20,19 @@
             <form action="index.php" method="get">
                 <label for="city">City</label>
                 <input type="text" name="city" id="city" placeholder="City">
-                <label for="country">Country</label>
-                <input type="text" name="country" id="country" placeholder="Country">
-                <button type="submit">Search</button>
+                <button type="submit btn ">Search</button>
             </form>
         </aside>
-        <section class="results">
-            
+
+        <!-- displays weather data -->
+        
+        <section class="weather-data">
+            <h3 id="city-name"></h3>
+            <div class="weather-info">
+                <p id="temperature"></p>
+                <p id="humidity"></p>
+                <p id="wind"></p>
+            </div>
         </section>
     </main>
     
