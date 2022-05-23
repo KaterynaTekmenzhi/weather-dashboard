@@ -49,3 +49,10 @@ button {
     padding: 25px;
     
 }
+
+.weather-data {
+    background: rgb(202, 203, 219);
+    padding: 25px;
+    margin: 25px;
+    border-radius: 10px;
+}
