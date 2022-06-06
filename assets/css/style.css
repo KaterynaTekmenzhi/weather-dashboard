@@ -1,58 +1,26 @@
-body {
-    background: #cfd7db;
+.navbar-dashboard {
+    font-size: 36px;
+    font-weight: bold;
+    color: rgb(250, 248, 248);
+    background:linear-gradient(90deg, Blue, Indigo,violet);
+    width:100px;
+    height:75px;
 }
 
-/* header (Weather Dashboard) */
-header {
-    background: rgb(180, 183, 225);
-    padding: 25px;
-    text-align: center;
-}
-
-/* sets up main page */
-main {
-    display: flex;
-    padding: 25px;
-    /* flex-direction: row;
-    flex-wrap: wrap; */
-}
-
-/* header text (Weather Dashboard) */
-h1 {
-    font-size: 40px;
-    color: rgb(251, 243, 243);
-    margin: 0;
-}
-
-/*  text (Search for a City). Inside class sidebar */
-h2 {
-    font-size: 30px;
-    text-align: center;
-    color: rgb(250, 236, 236);
-    margin: 0;
-}
-
-/* button in sidebar */
-button {
-    background: rgb(180, 183, 225);
-    border: none;
-    color: rgb(15, 15, 15);
+.search-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(9, 8, 8);
     padding: 10px;
-    font-size: 20px;
-    margin: 10px;
-    cursor: pointer;
 }
 
-/* */
-.sidebar {
-    background: rgb(202, 203, 219);
-    padding: 25px;
-    
+.city-name {
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(9, 8, 8);
+    padding: 10px;
 }
 
-.weather-data {
-    background: rgb(202, 203, 219);
-    padding: 25px;
-    margin: 25px;
-    border-radius: 10px;
+.forecast {
+    font-size: 18px;
 }

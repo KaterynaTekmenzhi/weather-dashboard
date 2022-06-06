@@ -9,32 +9,71 @@
     <title>Weather Dashboard</title>
 </head>
 <body>
-    <header>
-        <h1>Weather Dashboard</h1>
-    </header>
-
     <main>
-        <!-- Sidebar to search for location -->
-        <aside class="sidebar">
-            <h2>Search for a City</h2>
-            <form action="index.php" method="get" class >
-                <label for="city">City</label>
-                <input type="text" name="city" id="city" placeholder="City">
-                <button type="submit btn ">Search</button>
-            </form>
-        </aside>
-
-        <!-- displays weather data -->
-        
-        <section class="weather-data">
-            <h3 id="city-name"></h3>
-            <div class="weather-info">
-                <p id="temperature"></p>
-                <p id="humidity"></p>
-                <p id="wind"></p>
+        <nav class="navbar navbar-dark bg-dark">
+            <span class="navbar-dashboard mb-0 h1 w-100 text-center">Weather Dashboard</span>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-4 bg-light">
+                    <p class="search-title my-1">Search for a city</p>
+                    <div class="input-group mb-2">
+                        <input id="city-input" type="text" class="form-control" placeholder="Enter city name" aria-label="Enter city name">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button" id="search-button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary mb-3" type="button" id="clear-history">Clear history</button>
+                    <form id="history"></form>
+                </div>
+                <div class="col-8">
+                    <div class="row mr-0">
+                        <div class="col-12 border border-dark m-3 rounded">
+                            <div class="row">
+                                <div class="col-12">
+                                    <span id="city-name" class="city-name align-middle"></span>
+                                    <img id="current-pic" src="placeholder" alt="">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <p id="temperature"></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <p id="humidity"></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <p id="wind-speed"></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 d-flex">
+                                    <p id="UV-index"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <h3>5-Day Forecast</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
+                        <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
+                        <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
+                        <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
+                        <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
+                    </div>
+                </div>
             </div>
-        </section>
-    </main>
-    
+        </div>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
