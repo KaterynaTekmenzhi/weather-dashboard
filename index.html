@@ -11,100 +11,64 @@
 </head>
 <body>
     <main>
+        <!-- Header displaying title of application -->
         <header class="navbar navbar-dark bg-dark">
             <span class="navbar-dashboard mb-0 h1 w-100 text-center">Weather Dashboard</span>
         </header>
+        <!-- Main content of application -->
         <div class="container">
             <div class="row">
+                <!-- Left side of application containing search box -->
                 <aside class="col-2 m-2 bg-light searchBox">
-                    <p class="searchTitle">Search for a city</p>
-                    <input class="input-group mb-2" placeholder="Enter city name" aria-label="Enter city name" type="text">
-                    <button class="btn btn-primary" type="button" id="search-button">
-                    <i class="fas fa-search"></i>
-                    </button>
-                    <div class="history-log">
-                        <button class="btn btn-primary mb-3" type="button" id="clear-history">Clear history</button>
-                        <form id="history"></form>
-                    </div>
+                    <!-- Search box -->
+                    <form id="form">
+                        <p class="searchTitle text-center">Search for a city</p>
+                        <input id="city" class="form-control inputGroup mb-2 text-center" type="search" placeholder="City" aria-label="search">
+                        <button class="btn btn-outline-dark" id="searchButton">Request</button>
+                    </form>
+                    <!-- Clear local storage history button -->
+                    <section class="history-log">
+                        <div id="search-history" class="card">
+                            <h5 class="card-header text-center">History</h5>
+                            <div id ="btn-card" class="card-body">
+                                <div id="btn-div" class="btn-group-vertical d-flex gap-1 mx-auto">
+                                <div id="un-list">
+        
+                                </div>
+                                </div>
+                                <div class="btn-group-vertical d-flex gap-1 mx-auto">
+                                <button id="clear-btn" class="btn btn-outline-dark">Clear Recent</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </aside>
+                <!-- Right side of application containing weather information -->
                 <section class="reply mt-2 pt-2 col-9">
+                    <!-- Todays weather forecast -->
                     <div class="todaysWeather mr-2 col-12 border border-dark m-2 rounded">
                         <h3 class="text-center" id="forecast">Today's Weather</h3>
-                        <img class="weatherIcon"> 
+                        <h4 id="date" class="text-center"></h4>
+                        <div class="weather-icon"><img src="./assets/icons/unknown.png" /></div> 
                         <p class="text-center" id="dayTemp">Temperature</p>
                         <p class="text-center" id="dayWind">Wind</p>
                         <p class="text-center" id="dayHumidity">Humidity</p>
-                        <p class="text-center" id="dayUV">UV Index</p>
+                        <p class="text-center" class="badge" id="dayUV">UV Index</p>
                     </div>
-                                    
+                    <!-- 5 day forecast -->               
                     <div class="mt-4 nextFive">
-                        <div class="row">
-                            <div class="col col-lg-3 col-md-2 col-sm-3 col-2 m-2 card text-center first" style="width: 14rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title Date" id="forecastDate">Tommorow</h5>
-                                    <img class="weatherIcon">
-                                </div>
-                                <ul class="list-group list-group-flush weatherData">
-                                    <li class="list-group-item" id="dayTemp">Temperature</li>
-                                    <li class="list-group-item" id="dayWind">Wind</li>
-                                    <li class="list-group-item" id="dayHumidity">Humidity</li>
-                                    <li class="list-group-item" id="dayUV">UV Index</li>
-                                </ul>    
-                            </div>
-                            <div class="col col-lg-3 col-md-2 col-sm-3 col-2 m-2 card text-center second" style="width: 14rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title Date" id="forecastDate">Tommorow</h5>
-                                    <img class="weatherIcon">
-                                </div>
-                                <ul class="list-group list-group-flush weatherData">
-                                    <li class="list-group-item" id="dayTemp">Temperature</li>
-                                    <li class="list-group-item" id="dayWind">Wind</li>
-                                    <li class="list-group-item" id="dayHumidity">Humidity</li>
-                                    <li class="list-group-item" id="dayUV">UV Index</li>
-                                </ul>    
-                            </div>
-                            <div class="col col-lg-3 col-md-2 col-sm-3 col-2 m-2 card text-center third" style="width: 14rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title Date" id="forecastDate">Tommorow</h5>
-                                    <img class="weatherIcon">
-                                </div>
-                                <ul class="list-group list-group-flush weatherData">
-                                    <li class="list-group-item" id="dayTemp">Temperature</li>
-                                    <li class="list-group-item" id="dayWind">Wind</li>
-                                    <li class="list-group-item" id="dayHumidity">Humidity</li>
-                                    <li class="list-group-item" id="dayUV">UV Index</li>
-                                </ul>    
-                            </div>
-                            <div class="col col-lg-3 col-md-2 col-sm-3 col-2 m-2 card text-center fourth" style="width: 14rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title Date" id="forecastDate">Tommorow</h5>
-                                    <img class="weatherIcon">
-                                </div>
-                                <ul class="list-group list-group-flush weatherData">
-                                    <li class="list-group-item" id="dayTemp">Temperature</li>
-                                    <li class="list-group-item" id="dayWind">Wind</li>
-                                    <li class="list-group-item" id="dayHumidity">Humidity</li>
-                                    <li class="list-group-item" id="dayUV">UV Index</li>
-                                </ul>    
-                            </div>
-                            <div class="col col-lg-3 col-md-2 col-sm-3 col-2 m-2 card text-center fifth" style="width: 14rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title Date" id="forecastDate">Tommorow</h5>
-                                    <img class="weatherIcon">
-                                </div>
-                                <ul class="list-group list-group-flush weatherData">
-                                    <li class="list-group-item" id="dayTemp">Temperature</li>
-                                    <li class="list-group-item" id="dayWind">Wind</li>
-                                    <li class="list-group-item" id="dayHumidity">Humidity</li>
-                                    <li class="list-group-item" id="dayUV">UV Index</li>
-                                </ul>    
-                            </div>
+                        <h3 class="text-center">5 Day Forecast</h3>
+                        <div class="accordion-body" id="fiveday">
+                            <div id="card-container" class="flex row"></div>
                         </div>
                     </div>
-                    
+                </section>
+            </div>
+        </div>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
